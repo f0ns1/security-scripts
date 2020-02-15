@@ -1,0 +1,58 @@
+cat script_docker.log 
+Create docker container and use it 
+Sending build context to Docker daemon  8.192kB
+Step 1/4 : FROM ubuntu:18.04
+18.04: Pulling from library/ubuntu
+5c939e3a4d10: Pulling fs layer
+c63719cdbe7a: Pulling fs layer
+19a861ea6baf: Pulling fs layer
+651c9d2d6c4f: Pulling fs layer
+651c9d2d6c4f: Waiting
+19a861ea6baf: Verifying Checksum
+19a861ea6baf: Download complete
+c63719cdbe7a: Verifying Checksum
+c63719cdbe7a: Download complete
+651c9d2d6c4f: Verifying Checksum
+651c9d2d6c4f: Download complete
+5c939e3a4d10: Verifying Checksum
+5c939e3a4d10: Download complete
+5c939e3a4d10: Pull complete
+c63719cdbe7a: Pull complete
+19a861ea6baf: Pull complete
+651c9d2d6c4f: Pull complete
+Digest: sha256:8d31dad0c58f552e890d68bbfb735588b6b820a46e459672d96e585871acc110
+Status: Downloaded newer image for ubuntu:18.04
+ ---> ccc6e87d482b
+Step 2/4 : MAINTAINER f0ns1 fonso.gonzalezsan@gmail.com
+ ---> Running in 20ca9cdee674
+Removing intermediate container 20ca9cdee674
+ ---> 48ab9d6b7c9c
+Step 3/4 : ENV DEBIAN_FRONTEND noninteractive
+ ---> Running in d2e41db52231
+Removing intermediate container d2e41db52231
+ ---> cdc00d0361dc
+Step 4/4 : RUN apt-get update && apt-get install -y git net-tools iputils-ping
+ ---> Running in 47a67a305967
+Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Reading package lists...
+E: Release file for http://security.ubuntu.com/ubuntu/dists/bionic-security/InRelease is not valid yet (invalid for another 4h 25min 2s). Updates for this repository will not be applied.
+E: Release file for http://archive.ubuntu.com/ubuntu/dists/bionic-updates/InRelease is not valid yet (invalid for another 4h 25min 54s). Updates for this repository will not be applied.
+E: Release file for http://archive.ubuntu.com/ubuntu/dists/bionic-backports/InRelease is not valid yet (invalid for another 4h 27min 6s). Updates for this repository will not be applied.
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+<none>              <none>              cdc00d0361dc        18 seconds ago      64.2MB
+ubuntu              18.04               ccc6e87d482b        4 weeks ago         64.2MB
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+e6910985ab597519f7153368f33c2d1b986441d824996ac4fb5c536a696124ad
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                  PORTS               NAMES
+e6910985ab59        ubuntu              "bash"              8 seconds ago       Up Less than a second                       application_ubuntu
+root@e6910985ab59:/# 
+root@e6910985ab59:/# 
+root@e6910985ab59:/# 
+
